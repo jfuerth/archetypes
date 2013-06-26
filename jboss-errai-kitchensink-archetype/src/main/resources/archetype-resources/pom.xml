@@ -25,25 +25,26 @@
       BOM -->
 #if ($enterprise == "true" || $enterprise == "y" || $enterprise == "yes" )
     <!-- Certified version of the JBoss EAP components we want to use -->
-    <version.org.jboss.spec.jboss.javaee6>3.0.2.Final-redhat-1</version.org.jboss.spec.jboss.javaee6>
-    <version.org.jboss.bom.errai>1.0.5.CR1-redhat-1</version.org.jboss.bom.errai>
-    <!-- Alternatively, comment out the above line, and un-comment the line 
-      below to use version 3.0.2.Final which is based on community built dependencies. 
+    <version.org.jboss.spec.jboss.javaee6>3.0.2.Final-redhat-3</version.org.jboss.spec.jboss.javaee6>
+    <version.org.jboss.bom.errai>1.0.4.Final-redhat-wfk-2</version.org.jboss.bom.errai>
+    <!-- Alternatively, comment out the above lines, and un-comment the lines
+      below to use versions which are based on community built dependencies. 
       You can actually use this stack with any version of JBoss AS that implements 
-      the Java EE 6 web profile -->
+      the Java EE 6 web profile. -->
     <!-- <version.org.jboss.spec.jboss.javaee6>3.0.2.Final</version.org.jboss.spec.jboss.javaee6> -->
+    <!-- <version.org.jboss.bom.errai>1.0.7.CR6</version.org.jboss.bom.errai> -->
 #else
     <version.org.jboss.spec.jboss.javaee6>3.0.2.Final</version.org.jboss.spec.jboss.javaee6>
-    <version.org.jboss.bom.errai>1.0.5.CR1</version.org.jboss.bom.errai>
-    <!-- Alternatively, comment out the above line, and un-comment the line 
-      below to use version 3.0.2.Final-redhat-1 which is a release certified to 
-      work with JBoss EAP 6. It requires you have access to the JBoss EAP 6 maven 
-      repository. -->
-    <!-- <version.org.jboss.spec.jboss.javaee6>3.0.2.Final-redhat-1</version.org.jboss.spec.jboss.javaee6> -->
+    <version.org.jboss.bom.errai>1.0.7.CR6</version.org.jboss.bom.errai>
+    <!-- Alternatively, comment out the above lines, and un-comment the lines
+      below to use versions which are certified to work with JBoss EAP 6. It
+      requires you have access to the JBoss EAP 6 and WFK 2.3 maven repositories. -->
+    <!-- <version.org.jboss.spec.jboss.javaee6>3.0.2.Final-redhat-3</version.org.jboss.spec.jboss.javaee6> -->
+    <!-- <version.org.jboss.bom.errai>1.0.4.Final-redhat-wfk-2</version.org.jboss.bom.errai> -->
 #end
 
     <!-- This version is specified here because Maven plugin versions can't be managed by BOMs. -->
-    <version.org.codehaus.mojo.gwt.maven.plugin>2.4.0</version.org.codehaus.mojo.gwt.maven.plugin>
+    <version.org.codehaus.mojo.gwt.maven.plugin>2.5.1</version.org.codehaus.mojo.gwt.maven.plugin>
 
   </properties>
 
@@ -67,7 +68,7 @@
       <dependency>
          <groupId>org.jboss.bom</groupId>
          <artifactId>jboss-javaee-6.0-with-errai</artifactId>
-         <version>${version.org.jboss.bom.errai}</version>
+         <version>\${version.org.jboss.bom.errai}</version>
          <type>pom</type>
          <scope>import</scope>
      </dependency>
